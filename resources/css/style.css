@@ -29,6 +29,11 @@ body {
     vertical-align: text-top;
 }
 
+.content h2.err {
+    color: #FF4444;
+    font-weight: bold;
+}
+
 .content h3 {
     font-size: 26px;
     margin-bottom: 20px;

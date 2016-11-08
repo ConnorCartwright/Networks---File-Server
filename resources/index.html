@@ -24,7 +24,7 @@
     <h3>Please type in your search query</h3>
 
     <div class="input-group">
-        <input id="input" type="text" class="form-control" placeholder="Search for... images/cat.jpg">
+        <input id="input" type="text" value="images/cat.jpg" class="form-control" placeholder="Search for...">
       <span class="input-group-btn">
         <button id="search" class="btn btn-success" type="button">Search!</button>
       </span>
@@ -32,9 +32,23 @@
 </div>
 
 <script>
+    window.onload = function() {
+        var input = document.getElementById("input").focus();
+    }
     document.getElementById('search').onclick = function() {
-        window.location = window.location.href + document.getElementById('input').value;
+        var search = document.getElementById('input').value;
+        window.location = window.location.href + search;
     };
+
+    document.querySelector('input').addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) { // 13 is enter
+            var search = document.getElementById('input').value;
+            if (search.length > 5) {
+                window.location = window.location.href + search;
+            }
+        }
+    });
 </script>
 
 
