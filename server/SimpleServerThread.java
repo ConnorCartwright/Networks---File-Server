@@ -89,6 +89,7 @@ public class SimpleServerThread implements Runnable {
                 Path p = Paths.get("resources/" + path);
                 boolean fileExists = Files.exists(p);
                 boolean cached = false;
+
                 CheckContentType cct = new CheckContentType(path.substring(path.lastIndexOf('.') + 1));
 
                 byte[] output;
