@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Simple Web Server</title>
+    <meta name="Simple Web Server for Networks Exercise 1, University of Birmingham, Ian Batten" content="Networks Exercise 1">
+    <meta name="Connor Cartwright" content="Simple Web Server">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="content">
+    <h2>Hello, Welcome to my Web Server!</h2>
+    <h3>Please type in your search query</h3>
+
+    <div class="input-group">
+        <input id="input" type="text" class="form-control" placeholder="Search for... images/cat.jpg">
+      <span class="input-group-btn">
+        <button id="search" class="btn btn-success" type="button">Search!</button>
+      </span>
+    </div>
+</div>
+
+<script>
+    document.getElementById('search').onclick = function() {
+        window.location = window.location.href + document.getElementById('input').value;
+    };
+</script>
+
+
+<!--<script src="js/scripts.js"></script>-->
+</body>
+</html>
