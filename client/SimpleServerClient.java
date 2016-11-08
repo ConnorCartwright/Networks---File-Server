@@ -28,11 +28,16 @@ public class SimpleServerClient {
         } catch (Exception e) {
             try { // else try and find the file locally
                 File f = new File("resources/" + Paths.get(url));
-                d.edit(f);
-                System.out.println("GET " +  url + " HTTP/1.1 200 OK");
-                System.out.println("Resource found locally!");
-            } catch (IOException e1) { // else the file is neither live or local
-                System.out.println("404, file not found");
+                try {
+                    d.edit(f);
+                    System.out.println("GET " +  url + " HTTP/1.1 200 OK");
+                    System.out.println("Resource found locally!");
+                } catch (Exception e1) {
+                    System.out.println("404, File Not Found");
+                }
+
+            } catch (Exception e2) { // else the file is neither live or local
+                System.out.println("404, File Not Found");
             }
         }
     }
